@@ -6,6 +6,9 @@
   border-right: 1px solid makerLightGrey;
 }
 
+.list {
+  padding: 0;
+}
 .title {
   width: 100%;
   text-align: center;

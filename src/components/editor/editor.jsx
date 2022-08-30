@@ -6,7 +6,7 @@ import styles from './editor.module.css';
 const Editor = ({ FileInput, cards, addCard, updateCard, deleteCard }) => (
   <section className={styles.editor}>
     <h1 className={styles.title}>Card Maker</h1>
-    <ul>
+    <ul className={styles.list}>
       {Object.keys(cards).map((key) => (
         <CardEditForm
           key={key}
