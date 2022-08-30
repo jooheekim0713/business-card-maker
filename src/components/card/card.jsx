@@ -10,7 +10,7 @@ const Card = ({ card }) => {
 
   return (
     <li key={id} className={`${styles.card} ${getStyles(theme)}`}>
-      <img className={styles.avatar} src={url} alt="profile image" />
+      <img className={styles.avatar} src={url} alt="profile" />
       <div className={styles.info}>
         <h1 className={styles.name}>{name}</h1>
         <p className={styles.company}>{company}</p>
