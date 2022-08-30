@@ -6,43 +6,11 @@ import { useHistory } from 'react-router-dom';
 import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 
-const Maker = ({ FileInput, authService }) => {
+const Maker = ({ FileInput, authService, cardRepository }) => {
   const history = useHistory();
-  const [cards, setCards] = useState({
-    1: {
-      id: '1',
-      name: ' joohee',
-      company: 'starbucks',
-      theme: 'dark',
-      title: 'software engineer',
-      email: 'gmail.com',
-      message: 'go for it',
-      fileName: 'ellie',
-      fileURL: null,
-    },
-    2: {
-      id: '2',
-      name: ' joohee',
-      company: 'starbucks',
-      theme: 'colorful',
-      title: 'software engineer',
-      email: 'gmail.com',
-      message: 'go for it',
-      fileName: 'ellie',
-      fileURL: null,
-    },
-    3: {
-      id: '3',
-      name: ' joohee',
-      company: 'starbucks',
-      theme: 'light',
-      title: 'software engineer',
-      email: 'gmail.com',
-      message: 'go for it',
-      fileName: 'ellie',
-      fileURL: 'ellie.png',
-    },
-  });
+  const historyState = history?.location?.state;
+  const [cards, setCards] = useState({});
+  const [userId, setUserId] = useState(historyState && historyState.id);
 
   const onLogout = () => {
     authService.logout();
@@ -50,7 +18,9 @@ const Maker = ({ FileInput, authService }) => {
 
   useEffect(() => {
     authService.onAuthChange((user) => {
-      if (!user) {
+      if (user) {
+        setUserId(user.uid);
+      } else {
         history.push('/');
       }
     });
@@ -62,6 +32,7 @@ const Maker = ({ FileInput, authService }) => {
       updated[card.id] = card;
       return updated;
     });
+    cardRepository.saveCard(userId, card);
   };
   const deleteCard = (card) => {
     setCards((cards) => {
@@ -69,6 +40,7 @@ const Maker = ({ FileInput, authService }) => {
       delete updated[card.id];
       return updated;
     });
+    cardRepository.removeCard(userId, card);
   };
 
   return (
