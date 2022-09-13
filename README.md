@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Bussiness Card Maker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+개인 명함을 만들 수 있는 어플리케이션입니다.
+개인정보를 입력하고, 사진을 업로드할 수 있으며 수정, 삭제가 가능합니다.
 
-## Available Scripts
+## 로그인 화면
 
-In the project directory, you can run:
+![로그인 화면](/public/images/card-maker/login.png)
 
-### `npm start`
+- 메인 로그인 화면에서 구글 혹은 깃허브를 통해 로그인이 가능합니다.
+- 로그인된 아이디 별로 내부에 보여지는 명함 목록이 다르게 보입니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 메인화면
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![메인 화면](/public/images/card-maker/main.png)
 
-### `npm test`
+- 명함을 만들고 수정하고 삭제할 수 있는 화면입니다. 좌측의 최하단의 입력창을 통해 명함을 생성하면 우측의 명함목록에 명함이 추가됩니다.
+- 헤더의 우측 상단 logout 버튼으로 로그아웃이 가능합니다.
+- 기존에 생성된 명함 목록은 좌측의 card maker 섹션에서 수정하는 즉시 우측 card preview 섹션에 정보가 반영됩니다.
+- 각 명함은 이미지를 입력하지 않으면 기본으로 설정된 이미지가 입력되며 이미지가 선택될 시 명함에 삽입된 이미지명이 화면에 노출됩니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 메인화면\_반응형
 
-### `npm run build`
+![메인화면_maker](/public/images/card-maker/main_editor.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![메인화면_preview](/public/images/card-maker/main_preview.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 사용한 기술 스택
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Javascript
+- React
+- PostCSS
+- react-router-dom
+- firebase
