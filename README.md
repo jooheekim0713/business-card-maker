@@ -32,3 +32,4 @@
 - PostCSS
 - react-router-dom
 - firebase
+- cloudinary
